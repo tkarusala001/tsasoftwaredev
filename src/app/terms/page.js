@@ -30,7 +30,7 @@ const TermsAndPrivacy = () => {
                     </div>
                     <div className="flex flex-col items-center justify-center my-8">
                         <Image src="/logo.png" width={30} height={30} alt="Earth Pulse Logo" />
-                        <p className="text-gray-400/65 text-sm mt-1">
+                        <p className="text-gray-500/65 text-sm mt-1">
                             &copy; {new Date().getFullYear()} Global Warming Data Tracker. All rights reserved.
                         </p>
                     </div>
