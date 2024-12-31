@@ -58,6 +58,7 @@ export default function TempChange() {
                 const response = await fetch('/api/nasa/temperature-anomalies');
                 const data = await response.json();
 
+                
                 // Calculate average temperature for each year
                 const avgTemps = data.map(yearData => ({
                     year: yearData.year,

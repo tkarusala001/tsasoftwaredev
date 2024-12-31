@@ -89,7 +89,7 @@ const GreenhouseChart = ({ data }) => {
                     {lastDataPoint && (
                         <>
                             <ReferenceDot x={lastDataPointIndex} y={lastDataPoint.co2Forcing} r={3} fill="#ebebeb" />
-                            <ReferenceDot x={lastDataPointIndex} y={lastDataPoint.ch4Forcing} r={3} fill="#ebebeb" />
+                             <ReferenceDot x={lastDataPointIndex} y={lastDataPoint.ch4Forcing} r={3} fill="#ebebeb" />
                             <ReferenceDot x={lastDataPointIndex} y={lastDataPoint.n2oForcing} r={3} fill="#ebebeb" />
                         </>
                     )}

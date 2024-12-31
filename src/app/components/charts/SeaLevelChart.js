@@ -54,7 +54,7 @@ export default function SeaLevelChart({ data }) {
                     <Line type="monotone" dataKey="avgSeaLevelChange" stroke="#0076ff" dot={false} activeDot={{ r: 3, fill: '#ebebeb' }} />
                     {lastDataPoint && (
                         <>
-                            <ReferenceDot x={lastDataPoint.year} y={lastDataPoint.avgSeaLevelChange} r={3} fill="#ebebeb" />
+                             <ReferenceDot x={lastDataPoint.year} y={lastDataPoint.avgSeaLevelChange} r={3} fill="#ebebeb" />
                         </>
                     )}
                 </LineChart>

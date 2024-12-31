@@ -98,7 +98,7 @@ const TempAnomalyChart = ({ data }) => {
                             />
                         </>
                     )}
-                    <ReferenceLine x="year" stroke="rgba(255, 255, 255, 0.5)" strokeWidth={2} />
+                     <ReferenceLine x="year" stroke="rgba(255, 255, 255, 0.5)" strokeWidth={2} />
                 </AreaChart>
             </ResponsiveContainer>
         </div>

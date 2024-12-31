@@ -88,7 +88,7 @@ const TemperatureChart = ({ data = [] }) => {
                     />
                     {lastDataPoint && (
                         <>
-                            <ReferenceDot x={lastDataPoint.year} y={lastDataPoint.averageTemp} r={3} fill="#ebebeb" />
+                             <ReferenceDot x={lastDataPoint.year} y={lastDataPoint.averageTemp} r={3} fill="#ebebeb" />
                         </>
                     )}
                 </AreaChart>

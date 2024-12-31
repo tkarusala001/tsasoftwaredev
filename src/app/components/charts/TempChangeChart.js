@@ -87,8 +87,8 @@ const TempChangeChart = ({ data }) => {
                         </>
                     )}
                 </AreaChart>
-            </ResponsiveContainer>
-        </div>
+             </ResponsiveContainer>
+        </div> 
     );
 };
 

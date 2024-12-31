@@ -40,7 +40,7 @@ export default function AverageTempAnomaly() {
                 const data = await response.json();
                 setLastModified(data.date);
             } catch (error) {
-                console.error('Error fetching last modified date:', error);
+                 console.error('Error fetching last modified date: ', error);
             }
         };
 
