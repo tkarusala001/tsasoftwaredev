@@ -25,7 +25,7 @@ export default function Home() {
       <footer className='w-full max-w-2xl mx-auto pt-4 border-t border-gray-700/80 mb-5'>
         <div className='flex flex-col justify-center items-center gap-1'>
           <Link
-            href="https://github.com/"
+            href="https://github.com/tkarusala001/tsasoftwaredev"
             target='_blank'
             aria-label='GitHub'
             className='text-gray-400 hover:text-gray-300 transition-colors'

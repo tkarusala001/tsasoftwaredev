@@ -45,7 +45,7 @@ export default function Footer() {
                 <div className="flex flex-col items-center justify-center my-8">
                     <Image src="/logo.png" width={30} height={30} alt="Logo" />
                     <p className="text-gray-400/65 text-sm mt-1">
-                        &copy; {new Date().getFullYear()}All rights reserved.
+                        &copy; {new Date().getFullYear()} All rights reserved.
                     </p>
                 </div>
             </div>
