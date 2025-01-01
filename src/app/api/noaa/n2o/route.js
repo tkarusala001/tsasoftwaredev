@@ -33,7 +33,7 @@ const parseCSV = (csv) => {
     .filter(line => !line.startsWith("#") && line.trim())  // Ignore comment lines and empty lines
     .slice(1)  // Ignore the headers line itself
     .map(line => {
-        const values = line.split(",");
+        const values =  line.split(",");
         return {
             year: parseInt(values[0]), // Year from the 1st column
             month: parseInt(values[1]), // Month from the 2nd column
