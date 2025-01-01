@@ -10,6 +10,7 @@ import GreenhouseGas from "../components/GreenhouseGas";
 import { useEffect, useState } from "react";
 import SeaLevel from "../components/SeaLevel";
 import Image from "next/image";
+import CarbonCalculator from '../components/CarbonCalculator';
 
 export default function GlobalWarming() {
     const [isClient, setIsClient] = useState(false);
@@ -50,6 +51,10 @@ export default function GlobalWarming() {
                     </div>
 
                 </section>
+
+                <section>
+                     <CarbonCalculator />
+                 </section>
 
                 <Footer />
             </main>
