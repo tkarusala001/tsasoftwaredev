@@ -26,7 +26,7 @@ export async function GET() {
     }
 }
 
-const parseCSV = (csv) => {
+ const parseCSV = (csv) => {
     const lines = csv.trim().split("\n");
 
     return lines
