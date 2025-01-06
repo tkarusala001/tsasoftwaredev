@@ -43,7 +43,7 @@ const CarbonQuizGame = () => {
         "10 pounds"
       ],
       correct: 2,
-      explanation: "That's right! A mature tree absorbs about 48 pounds of CO₂ annually through photosynthesis.",
+      explanation: "That&apos;s right! A mature tree absorbs about 48 pounds of CO₂ annually through photosynthesis.",
       wrongExplanation: "The correct answer is 48 pounds. Trees are natural carbon sinks, and a mature tree can absorb approximately 48 pounds of CO₂ per year through photosynthesis."
     },
     {
@@ -79,11 +79,11 @@ const CarbonQuizGame = () => {
         "75%"
       ],
       correct: 1,
-      explanation: "That's right! LED bulbs are incredibly efficient, using up to 90% less energy than traditional incandescent bulbs.",
+      explanation: "That&apos;s right! LED bulbs are incredibly efficient, using up to 90% less energy than traditional incandescent bulbs.",
       wrongExplanation: "LED bulbs can actually reduce energy use by up to 90%, making them one of the most effective energy-saving upgrades available."
     },
     {
-      question: "What's the biggest source of food-related carbon emissions?",
+      question: "What&apos;s the biggest source of food-related carbon emissions?",
       options: [
         "Food waste",
         "Food transportation",
@@ -103,7 +103,7 @@ const CarbonQuizGame = () => {
         "0.12 kg"
       ],
       correct: 1,
-      explanation: "That's right! Recycling just one aluminum can saves 0.73 kg of CO₂. This shows how small actions can add up!",
+      explanation: "That&apos;s right! Recycling just one aluminum can saves 0.73 kg of CO₂. This shows how small actions can add up!",
       wrongExplanation: "Recycling one aluminum can saves 0.73 kg of CO₂. This is because recycling aluminum uses much less energy than producing new aluminum from raw materials."
     },
     {
@@ -191,7 +191,7 @@ const CarbonQuizGame = () => {
       <Trophy className="w-20 h-20 mx-auto text-yellow-500" />
       <div className="space-y-2">
         <h3 className="text-2xl font-bold">Thanks for Playing!</h3>
-        <p className="text-lg">You've completed the Carbon Footprint Quiz</p>
+        <p className="text-lg">You&apos;ve completed the Carbon Footprint Quiz</p>
       </div>
 
       <div className="grid grid-cols-2 gap-4 max-w-md mx-auto">
