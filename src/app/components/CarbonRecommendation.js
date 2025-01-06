@@ -2,15 +2,19 @@ import React, { useMemo } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
-import { Leaf, Car, Home, Utensils, Recycle, Zap } from 'lucide-react';
+import { 
+  Leaf, Car, Home, Utensils, Recycle, Zap,
+  Shower, Wind, TreePine, ShoppingBag, 
+  Lightbulb, Plane, ThermometerSun, Droplet
+} from 'lucide-react';
 
 const CarbonRecommendations = ({ formData, totalEmissions }) => {
   const recommendations = useMemo(() => {
     const recs = [];
     
-    // Transportation Recommendations
+    // Existing Transportation Recommendations
     if (formData.carType === 'gasoline') {
-      const electricSavings = totalEmissions * 0.3; // Approximate savings from switching to electric
+      const electricSavings = totalEmissions * 0.3;
       recs.push({
         category: 'Transportation',
         title: 'Consider Switching to an Electric Vehicle',
@@ -21,10 +25,10 @@ const CarbonRecommendations = ({ formData, totalEmissions }) => {
       });
     }
 
-    // Home Energy Recommendations
+    // Existing Home Energy Recommendations
     const monthlyElectricity = parseFloat(formData.electricity.amount || 0);
     if (monthlyElectricity > 900) {
-      const solarSavings = monthlyElectricity * 0.92 * 0.6; // 60% reduction from solar
+      const solarSavings = monthlyElectricity * 0.92 * 0.6;
       recs.push({
         category: 'Energy',
         title: 'Install Solar Panels',
@@ -35,10 +39,33 @@ const CarbonRecommendations = ({ formData, totalEmissions }) => {
       });
     }
 
-    // Food Recommendations
+    // New Energy Recommendations
+    const ledSavings = monthlyElectricity * 0.92 * 0.1; // 10% reduction from LED bulbs
+    recs.push({
+      category: 'Energy',
+      title: 'Switch to LED Lighting',
+      description: `Replacing all traditional bulbs with LED alternatives could save approximately ${ledSavings.toFixed(1)} kg CO₂ per month.`,
+      impact: 'Medium',
+      icon: Lightbulb,
+      saving: ledSavings
+    });
+
+    // Smart Thermostat
+    const gasUsage = parseFloat(formData.naturalGas.amount || 0);
+    const thermostatSavings = (gasUsage * 5.3 * 0.12) + (monthlyElectricity * 0.92 * 0.12); // 12% reduction
+    recs.push({
+      category: 'Energy',
+      title: 'Install a Smart Thermostat',
+      description: `A smart thermostat could optimize your heating and cooling, saving approximately ${thermostatSavings.toFixed(1)} kg CO₂ per month.`,
+      impact: 'Medium',
+      icon: ThermometerSun,
+      saving: thermostatSavings
+    });
+
+    // Existing Food Recommendations
     const beefServings = parseFloat(formData.beefServings.amount || 0);
     if (beefServings > 2) {
-      const beefSavings = beefServings * 6.61 * 2; // Reducing beef consumption by half
+      const beefSavings = beefServings * 6.61 * 2;
       recs.push({
         category: 'Diet',
         title: 'Reduce Beef Consumption',
@@ -49,9 +76,42 @@ const CarbonRecommendations = ({ formData, totalEmissions }) => {
       });
     }
 
-    // Waste Management Recommendations
+    // New Food/Shopping Recommendations
+    const localFoodSavings = totalEmissions * 0.05; // 5% reduction from local food
+    recs.push({
+      category: 'Diet',
+      title: 'Buy Local and Seasonal Food',
+      description: `Choosing local, seasonal produce could reduce your carbon footprint by approximately ${localFoodSavings.toFixed(1)} kg CO₂ per month by reducing transportation emissions.`,
+      impact: 'Medium',
+      icon: ShoppingBag,
+      saving: localFoodSavings
+    });
+
+    // Water Usage
+    const waterSavings = totalEmissions * 0.03; // 3% reduction from water conservation
+    recs.push({
+      category: 'Water',
+      title: 'Reduce Hot Water Usage',
+      description: `Installing low-flow showerheads and washing clothes in cold water could save approximately ${waterSavings.toFixed(1)} kg CO₂ per month.`,
+      impact: 'Low',
+      icon: Droplet,
+      saving: waterSavings
+    });
+
+    // Air Travel Alternative
+    const airTravelSavings = totalEmissions * 0.15; // 15% potential reduction
+    recs.push({
+      category: 'Transportation',
+      title: 'Consider Alternatives to Air Travel',
+      description: `When possible, choose train travel or virtual meetings instead of flying. This could save approximately ${airTravelSavings.toFixed(1)} kg CO₂ per month.`,
+      impact: 'High',
+      icon: Plane,
+      saving: airTravelSavings
+    });
+
+    // Existing Waste Management Recommendations
     if (formData.recycling !== 'always') {
-      const recyclingSavings = totalEmissions * 0.05; // 5% reduction from consistent recycling
+      const recyclingSavings = totalEmissions * 0.05;
       recs.push({
         category: 'Waste',
         title: 'Improve Recycling Habits',
@@ -62,22 +122,31 @@ const CarbonRecommendations = ({ formData, totalEmissions }) => {
       });
     }
 
-    if (formData.composting === 'no') {
-      const compostingSavings = totalEmissions * 0.03; // 3% reduction from composting
-      recs.push({
-        category: 'Waste',
-        title: 'Start Composting',
-        description: `Starting a composting practice could reduce your carbon footprint by approximately ${compostingSavings.toFixed(1)} kg CO₂ per month.`,
-        impact: 'Low',
-        icon: Leaf,
-        saving: compostingSavings
-      });
-    }
+    // New Waste/Consumption Recommendations
+    const reusableSavings = totalEmissions * 0.02; // 2% reduction
+    recs.push({
+      category: 'Consumption',
+      title: 'Use Reusable Products',
+      description: `Switch to reusable bags, bottles, and containers. This could save approximately ${reusableSavings.toFixed(1)} kg CO₂ per month.`,
+      impact: 'Low',
+      icon: ShoppingBag,
+      saving: reusableSavings
+    });
 
-    // Home Efficiency
-    const gasUsage = parseFloat(formData.naturalGas.amount || 0);
+    // Home Gardening
+    const gardeningSavings = totalEmissions * 0.04; // 4% reduction
+    recs.push({
+      category: 'Lifestyle',
+      title: 'Start a Home Garden',
+      description: `Growing your own vegetables could save approximately ${gardeningSavings.toFixed(1)} kg CO₂ per month while providing fresh produce.`,
+      impact: 'Low',
+      icon: TreePine,
+      saving: gardeningSavings
+    });
+
+    // Existing Home Efficiency
     if (gasUsage > 50) {
-      const efficiencySavings = gasUsage * 5.3 * 0.2; // 20% reduction from better insulation
+      const efficiencySavings = gasUsage * 5.3 * 0.2;
       recs.push({
         category: 'Energy',
         title: 'Improve Home Insulation',
@@ -85,6 +154,29 @@ const CarbonRecommendations = ({ formData, totalEmissions }) => {
         impact: 'Medium',
         icon: Home,
         saving: efficiencySavings
+      });
+    }
+
+    // New Home Efficiency
+    const ventilationSavings = totalEmissions * 0.04; // 4% reduction
+    recs.push({
+      category: 'Energy',
+      title: 'Improve Natural Ventilation',
+      description: `Using natural ventilation and ceiling fans instead of air conditioning when possible could save approximately ${ventilationSavings.toFixed(1)} kg CO₂ per month.`,
+      impact: 'Low',
+      icon: Wind,
+      saving: ventilationSavings
+    });
+
+    if (formData.composting === 'no') {
+      const compostingSavings = totalEmissions * 0.03;
+      recs.push({
+        category: 'Waste',
+        title: 'Start Composting',
+        description: `Starting a composting practice could reduce your carbon footprint by approximately ${compostingSavings.toFixed(1)} kg CO₂ per month.`,
+        impact: 'Low',
+        icon: Leaf,
+        saving: compostingSavings
       });
     }
 

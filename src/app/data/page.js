@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import SeaLevel from "../components/SeaLevel";
 import Image from "next/image";
 import CarbonCalculator from '../components/CarbonCalculator';
+import CarbonQuizGame from "../components/CarbonQuizGame";
 
 export default function GlobalWarming() {
     const [isClient, setIsClient] = useState(false);
@@ -55,6 +56,10 @@ export default function GlobalWarming() {
                 <section>
                      <CarbonCalculator />
                  </section>
+
+                 <section className="mt-8">
+                <CarbonQuizGame />
+                </section>
 
                 <Footer />
             </main>
