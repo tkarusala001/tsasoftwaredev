@@ -1,4 +1,4 @@
-"use client";
+"use client"; //client component in nextjs
 
 import { useState, useEffect } from "react";
 import TemperatureChart from "./charts/AvgTemperatureChart";

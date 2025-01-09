@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import { IoIosArrowDroprightCircle, IoLogoGithub } from "react-icons/io"
 import Link from 'next/link';
 
+//this is the home page
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center justify-between min-h-screen">

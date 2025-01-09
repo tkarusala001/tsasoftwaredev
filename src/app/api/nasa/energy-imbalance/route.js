@@ -1,4 +1,4 @@
-// src/app/api/readNetCDF/route.js
+// src/app/api/nasa/energy-imbalance/route.js
 
 import fs from 'fs';
 import path from 'path';
