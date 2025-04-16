@@ -21,6 +21,12 @@ export default function Home() {
           <Link href='/about' className='w-full text-center bg-base-200/75 hover:bg-base-200 rounded-xl py-2.5 px-8 cursor-pointer'>
             <h3 className='text-[0.93rem] font-semibold'>About</h3>
           </Link>
+          <Link href='/scan' className='w-full text-center bg-base-200/75 hover:bg-base-200 rounded-xl py-2.5 px-8 cursor-pointer'>
+            <h3 className='text-[0.93rem] font-semibold'>ScanAI</h3>
+          </Link>
+          <Link href='/ai' className='w-full text-center bg-base-200/75 hover:bg-base-200 rounded-xl py-2.5 px-8 cursor-pointer'>
+            <h3 className='text-[0.93rem] font-semibold'>AI Chatbot</h3>
+          </Link>
         </div>
       </div>
 
