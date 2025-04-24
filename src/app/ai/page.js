@@ -140,6 +140,7 @@ ${ECOSCAN_CONTEXT}
 User Question: ${messageToSend}
 
 Please provide a helpful, specific, and friendly answer based on the EcoScan app context. If the question is not directly related to sustainability or eco-friendly topics, politely redirect the conversation toward environmental topics. Use an encouraging, positive tone while still being factual about environmental impacts.
+ANSWER DETAILED, BUT CONSISE. 
       `;
 
       // Generate AI response
