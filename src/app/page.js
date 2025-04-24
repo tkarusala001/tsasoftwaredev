@@ -11,8 +11,8 @@ export default function Home() {
     <div className="flex flex-col items-center justify-between min-h-screen">
       <div className='flex-grow flex flex-col items-center justify-center max-w-2xl mx-auto'>
         <Image alt='logo' src='/logo.png' width={35} height={35} />
-        <h1 className='text-xl font-bold tracking-tight'>Global Warming Data Tracker</h1>
-        <p className='text-sm text-center mb-8'>Explore the latest data and insights on global warming trends.</p>
+        <h1 className='text-xl font-bold tracking-tight'>EcoScan</h1>
+        <p className='text-sm text-center mb-8'>Explore sustainability</p>
 
         <div className='flex flex-row gap-1 w-[75%]'>
           <Link href='/data' className='w-full text-center bg-base-200/75 hover:bg-base-200 rounded-xl py-2.5 px-8 cursor-pointer'>
@@ -41,7 +41,7 @@ export default function Home() {
             <IoLogoGithub size={25} />
           </Link>
           <p className='text-gray-400 text-center text-sm'>
-            © {new Date().getFullYear()} Global Warming Data Tracker. All rights reserved.
+            © {new Date().getFullYear()} EcoScan. All rights reserved.
           </p>
         </div>
       </footer> 
